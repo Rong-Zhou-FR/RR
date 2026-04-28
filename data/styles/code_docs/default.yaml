@@ -1,0 +1,6 @@
+name: "code_doc_style"
+description: "Rong's code documentation style"
+examples:
+  - "This function calculates the sum of two numbers. It's a simple utility function that demonstrates basic arithmetic operations."
+  - "The API endpoint returns a list of users. Each user object contains id, name, and email fields."
+  - "This class manages database connections. It handles connection pooling and automatic reconnection on failure."

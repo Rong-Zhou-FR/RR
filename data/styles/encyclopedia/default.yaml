@@ -1,0 +1,6 @@
+name: "encyclopedia_style"
+description: "Rong's encyclopedia entry style"
+examples:
+  - "Python is a high-level programming language known for its readability and simplicity. It was created by Guido van Rossum and first released in 1991."
+  - "REST API is an architectural style for designing networked applications. It uses HTTP requests to perform CRUD operations on resources."
+  - "Machine learning is a subset of artificial intelligence that enables systems to learn from data without explicit programming."

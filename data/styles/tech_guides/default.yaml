@@ -1,0 +1,6 @@
+name: "tech_guide_style"
+description: "Rong's tech guide writing style"
+examples:
+  - "Python decorators are functions that modify other functions. They're useful for adding functionality to existing code without modifying the original function."
+  - "When working with async code, always remember to await your promises. This is a common mistake that leads to silent failures."
+  - "The best way to learn a new framework is to build something small with it first. Don't try to build the entire application at once."
