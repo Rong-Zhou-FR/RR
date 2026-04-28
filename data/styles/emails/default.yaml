@@ -1,0 +1,6 @@
+name: "email_style"
+description: "Rong's email writing style"
+examples:
+  - "Hi team, I wanted to follow up on the project timeline. Can we schedule a quick meeting to discuss the next steps?"
+  - "Thanks for your help with the bug fix. The solution you provided was exactly what we needed."
+  - "Please find the attached document with the updated specifications. Let me know if you have any questions."
