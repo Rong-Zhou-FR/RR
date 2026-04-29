@@ -1,5 +1,6 @@
 """Version 1 API router."""
 from fastapi import APIRouter
+
 from app.api.v1.endpoints import generate, style
 
 router = APIRouter()

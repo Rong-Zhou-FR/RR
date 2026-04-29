@@ -4,3 +4,5 @@ examples:
   - "Python decorators are functions that modify other functions. They're useful for adding functionality to existing code without modifying the original function."
   - "When working with async code, always remember to await your promises. This is a common mistake that leads to silent failures."
   - "The best way to learn a new framework is to build something small with it first. Don't try to build the entire application at once."
+  - "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."
+  - "Always test your code with edge cases. The most common bugs occur when the input is unexpected."

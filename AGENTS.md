@@ -228,3 +228,87 @@ RR/
 ├── README.md             # Human-readable overview
 └── .gitignore            # Git ignore rules
 ```
+
+---
+
+## Error Handling Specifications
+
+### Custom Exception Structure
+- **Base Class**: `RRException` (inherits from Python's built-in `Exception`)
+- **Error Code Format**: `STYLE_NOT_FOUND` (uppercase with underscores)
+- **Exception Module**: All custom exceptions in `app/core/exceptions.py`
+
+### Error Response Format
+- **Top-level Key**: `"error"` (structured JSON response)
+- **Fields**:
+  - `code`: Error code (e.g., `STYLE_NOT_FOUND`)
+  - `message`: Human-readable error message
+  - `details`: Additional context for debugging
+  - `troubleshooting`: Guidance for resolving the error
+
+### Custom Exceptions
+- `StyleNotFoundError`: When a style file is missing or invalid
+- `ModelInferenceError`: When model inference fails
+- `ConfigurationError`: When configuration is invalid
+- `GenerationError`: General generation errors
+
+---
+
+## Style System
+
+### Style Files
+- Location: `data/styles/{scenario}/default.yaml`
+- Format: YAML with `name`, `description`, and `examples` fields
+- Active Scenario: `tech_guides` (with detailed examples)
+- Other Scenarios: Empty templates with placeholder comments
+
+### Prompt Engineering
+- Style examples are injected into prompts
+- Format: Clear structure with style examples section
+- Maximum 3 examples per prompt (to avoid token limits)
+
+---
+
+## Testing Standards
+
+- **Framework**: pytest with fixtures for common test data
+- **Coverage**: Both prompt engine and style manager
+- **Test Files**: `tests/test_prompt_engine.py`, `tests/test_style_manager.py`
+- **Run Tests**: `poetry run pytest tests/ -v`
+
+---
+
+## Code Quality
+
+- **Formatting**: Black (line length 88)
+- **Linting**: Ruff (ignore N818 for exception names)
+- **Run Checks**:
+  ```bash
+  poetry run black app/ tests/ --check
+  poetry run ruff check app/ tests/ --ignore N818
+  ```
+
+---
+
+## Deployment
+
+### Local Development
+```bash
+poetry run uvicorn app.main:app --reload
+```
+
+### With HF Token
+1. Add your Hugging Face API token to `.env`:
+   ```
+   HF_API_TOKEN=your_token_here
+   ```
+2. Start the server:
+   ```bash
+   poetry run uvicorn app.main:app --reload
+   ```
+3. Test the API:
+   ```bash
+   curl -X POST "http://localhost:8000/v1/generate/" \
+     -H "Content-Type: application/json" \
+     -d '{"prompt": "Write about Python", "scenario": "tech_guides"}'
+   ```
