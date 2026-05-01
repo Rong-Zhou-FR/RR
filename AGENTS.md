@@ -64,7 +64,7 @@ Context resolution order (highest priority first):
 ### Core Stack (MVP)
 - **Framework**: FastAPI (async, auto OpenAPI docs)
 - **Model Provider**: Hugging Face Inference API (no local GPU needed)
-- **Data Validation**: Pydantic
+- **Data Validation**: Pydantic (includes configurable `hf_base_url`)
 - **Config/Style Storage**: YAML files
 - **Environment**: Python 3.10+
 
@@ -220,9 +220,6 @@ RR/
 ├── tests/                 # Test suite
 ├── docs/                  # Documentation
 │   └── man/              # Command documentation
-├── dev/                   # Development files
-│   ├── plans/            # Implementation plans
-│   └── AI-prompts/       # AI prompts for development
 ├── AGENTS.md             # This file (root rules)
 ├── pyproject.toml        # Poetry configuration
 ├── README.md             # Human-readable overview
@@ -259,13 +256,20 @@ RR/
 ### Style Files
 - Location: `data/styles/{scenario}/default.yaml`
 - Format: YAML with `name`, `description`, and `examples` fields
-- Active Scenario: `tech_guides` (with detailed examples)
-- Other Scenarios: Empty templates with placeholder comments
+- MVP Scenarios: `tech_guides` (28 examples), `code_docs` (18 examples)
+- Other Scenarios: Not expanded for MVP (emails, encyclopedia - see memory: RR/MVP_scope)
+
+### RAG Implementation
+- Module: `app/services/rag.py` - StyleRAG class
+- Embedding model: `sentence-transformers/all-MiniLM-L6-v2`
+- Retrieval: Top-3 most similar examples via cosine similarity
+- Usage: Set `use_rag: true` in GenerationRequest
 
 ### Prompt Engineering
 - Style examples are injected into prompts
 - Format: Clear structure with style examples section
-- Maximum 3 examples per prompt (to avoid token limits)
+- Without RAG: All examples included
+- With RAG: Top-3 relevant examples only (reduces token usage)
 
 ---
 
@@ -297,10 +301,11 @@ RR/
 poetry run uvicorn app.main:app --reload
 ```
 
-### With HF Token
-1. Add your Hugging Face API token to `.env`:
+1. Ensure Hugging Face API token is in `.env`:
    ```
    HF_API_TOKEN=your_token_here
+   # Optional: custom endpoint
+   # HF_BASE_URL=https://router.huggingface.co/v1/chat/completions
    ```
 2. Start the server:
    ```bash

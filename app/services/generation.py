@@ -5,11 +5,15 @@ from app.models.provider import get_model_provider
 from app.schemas.generation import GenerationRequest
 
 
-async def generate_text(request: GenerationRequest) -> str:
+async def generate_text(
+    request: GenerationRequest,
+    use_rag: bool = False,
+) -> str:
     """Generate text in Rong's style.
 
     Args:
         request: Generation request containing prompt, scenario, and parameters
+        use_rag: Whether to use RAG for style example retrieval
 
     Returns:
         Generated text string
@@ -18,8 +22,20 @@ async def generate_text(request: GenerationRequest) -> str:
         GenerationError: If text generation fails at any step
     """
     try:
+        # Get style examples (from RAG or static)
+        style_examples = None
+        if use_rag:
+            from app.services.rag import get_rag
+
+            rag = await get_rag()
+            style_examples = await rag.retrieve(
+                request.prompt,
+                request.scenario,
+                top_k=3,
+            )
+
         # Build prompt with style injection
-        prompt = build_prompt(request.scenario, request.prompt)
+        prompt = build_prompt(request.scenario, request.prompt, style_examples)
 
         # Get model provider
         provider = get_model_provider(request.model)

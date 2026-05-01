@@ -177,7 +177,7 @@ RR/
 │   │   ├── services.md
 │   │   └── data.md
 │   └── style-template-guide.md
-├── dev/
+├── changelog/
 │   ├── plans/
 │   │   └── 0-init-plan.md
 │   └── AI-prompts/

@@ -23,7 +23,7 @@ async def generate(request: GenerationRequest):
         HTTPException: With structured JSON error response for any failures
     """
     try:
-        generated_text = await generate_text(request)
+        generated_text = await generate_text(request, use_rag=request.use_rag)
         return GenerationResponse(
             text=generated_text, model=request.model, scenario=request.scenario
         )

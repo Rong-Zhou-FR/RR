@@ -1,14 +1,96 @@
-name: "code_doc_style"
-description: "Rong's code documentation style"
+description: Rong's code_docs writing style
 examples:
-  # Add your code documentation style examples here
-  # Example format:
-  # - "This function calculates the sum of two numbers. It's a simple utility function that demonstrates basic arithmetic operations."
-  # - "The API endpoint returns a list of users. Each user object contains id, name, and email fields."
-  # - "This class manages database connections. It handles connection pooling and automatic reconnection on failure."
-  #
-  # Tips for selecting examples:
-  # - Choose examples that show clear, concise documentation
-  # - Include examples of function, class, and module documentation
-  # - Focus on examples that explain the "why" not just the "what"
-  []
+- fzf is a fast, open‑source command‑line “fuzzy finder” tool that lets you search
+  and filter lists interactively. You can integrate it into ranger to improve its
+  search capacities.
+- 'Install fzf sudo apt install fzf # Debian/Ubuntu sudo pacman -S fzf # Arch brew
+  install fzf # macOS which fzf Add the custom commands to ranger Edit (or create)
+  ~/.config/ranger/commands.py and add: from ranger.api.commands import Command import
+  subprocess class fzf_select(Command): def execute(self): fzf = subprocess.Popen(
+  ''find -L .'
+- 'Now you can run: :fzf_select → fuzzy search files :fzf_select_directories → fuzzy
+  search directories'
+- '<!DOCTYPE html> <html lang="fr"> <head> <meta charset="UTF-8" /> <meta name="viewport"
+  content="width=device-width, initial-scale=1.0" /> <meta name="author" content="Rong
+  Zhou"> <title>Animation Copier Progression</title> <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <script defer> // p5.js sketch: 720x1280 canvas, cycles background images and titles
+  every 1s let images = []; let titles = ["1000 CE", "1980 CE", "2000 CE", "2020 CE"];
+  function preload() { images[0] = loadImage("https://upload.wikimedia.org/wikipedia/commons/c/c9/The_Scribe_at_Work.jpg");
+  images[1] = loadImage("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Sharp_MX-7500_photocopier.jpg/1024px-Sharp_MX-7500_photocopier.jpg");
+  images[2] = loadImage("https://upload.wikimedia.org/wikipedia/commons/7/7b/Smargo_SmartReader_Plus_02_Groessenvergleich.jpg");
+  images[3] = loadImage("https://upload.wikimedia.org/wikipedia/commons/b/bb/Employee_Training_-_Communication_Skills_Illustration.jpg");
+  } function setup() { const canvas = createCanvas(windowWidth, windowHeight); //
+  Set canvas size to 100vw and 100vh canvas.parent("p5-animation"); // Attach the
+  canvas to the specific div textAlign(CENTER, CENTER); textSize(72); } function windowResized()
+  { resizeCanvas(windowWidth, windowHeight); // Adjust canvas size on window resize
+  } function draw() { background(0); // Change every 1000 ms const idx = Math.floor((millis()
+  / 1000) % images.length); // Draw background image covering the screen drawCover(images[idx]);
+  // Overlay for readability noStroke(); fill(0, 0, 0, 120); rect(0, height * 0.75
+  - 100, width, 200); // Draw title text in white fill(255); text(titles[idx], width
+  / 2, height * 0.75); } // Draw an image to cover the entire canvas while preserving
+  aspect ratio function drawCover(img) { if (!img || !img.width || !img.height) return;
+  const scale = Math.max(width / img.width, height / img.height); const w = img.width
+  * scale; const h = img.height * scale; const x = (width - w) / 2; const y = (height
+  - h) / 2; image(img, x, y, w, h); } </script> </head> <body> <div id="p5-animation"
+  style="width: 100vw; margin: auto;"></div> </body> </html>'
+- 'Il faut obligatoirement redémarrer VSCode ``` Windows : ```powershell (Invoke-WebRequest
+  -Uri https://install.python-poetry.org -UseBasicParsing).Content | python - ```
+  > If the installation script method doesn''t work, try `pipx install poetry`.'
+- '``` Ensuite gestionnaire les paquets: ```bash source bin/activate pip <nom-de-package>
+  pip install pip-autoremove pip-autoremove <nom-de-package> ``` Chaque fois vous
+  ouvertez une nouvelle terminal, il faut d''abord `source bin/activate`.'
+- However, English-languaged results are consistently better for most public AI models,
+  since that is the focus during training. General instructions Code edit Where I
+  performed manual edits, do not revert them.
+- Chat From now on, please respond with just the requested content. Réponds désormais
+  en texte plein, sans explication ni mise en forme.
+- AI prompt /generate AI prompt based on File management Generating and combing PDFs
+  @terminal Find the documents specified in `bordeau-piece-justificatif.md` in ``
+  folder and combine them into a PDF in the order specified and optimised for mail
+  with ghost script (gs).
+- 'PlantUML diagrams Create a plant UML diagram to illustrate : use Graphviz, CSS-like
+  styling for a visually-impressive, no-border color scheme. Linux Terminal /generate
+  Linux Mint terminal commands for Project proposal I would like to {need}.'
+- Programming Proofing /explain The purpose of this code is (). Identify potential
+  issues (if any) and propose solutions. /explain the following lines and identify
+  possible issues. After users confirmations for everything attempt to () in one go.
+- '''Hello World!'' import React from ''react''; // Obligatoire pour chaque app.js
+  pour utilise Bibliothèque React import {Text, View} from ''react-native''; const
+  HelloWorldApp = () => { return ( <View style={{ flex: 1, justifyContent: ''center'',
+  alignItems: ''center'', }}> <Text>Hello, world!</Text> <Text>Heyhey</Text> </View>
+  ); // Retour un contenant (View) et les contenus (Text) }; export default HelloWorldApp;
+  Props et State import React from ''react''; import {Text, View, StyleSheet} from
+  ''react-native''; // React Native Styles const styles = StyleSheet.create({ container:
+  { flex: 1, justifyContent: ''center'', alignItems: ''center'', }, }); const Greeting
+  = props => { return ( <View style={styles.container}> <Text>Hello {props.name}!</Text>
+  </View> ); }; const LotsOfGreetings = () => { const [count, setCount] = useState(0);
+  return ( <View style={styles.container}> <Greeting name="Rexxar" /> <Greeting name="Jaina"
+  /> <Greeting name="Valeera" /> <Text>You clicked {count} times</Text> <Button onPress={()
+  => setCount(count + 1)} title="Click me!" /> </View> ); }; export default LotsOfGreetings;
+  Il s''agit d''une structure imbriquée.'
+- Le rendu du contenu est assuré par LotsOFGreetings() , tandis que Greeting() spécifie
+  le modèle et styles() spécifie le style.
+- 'Class import React, {Component} from ''react''; import {StyleSheet, TouchableOpacity,
+  Text, View} from ''react-native''; class App extends Component { state = { count:
+  0, }; countAddOne = () => { this.setState({ count: this.state.count + 1, }); };
+  render() { return ( <View style={styles.container}> <TouchableOpacity style={styles.button}
+  onPress={this.countAddOne}> <Text>Click me</Text> </TouchableOpacity> <View> <Text>You
+  clicked {this.state.count} times</Text> </View> </View> ); } } const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: ''center'', alignItems: ''center'', }, button:
+  { alignItems: ''center'', backgroundColor: ''#DDDDDD'', padding: 10, marginBottom:
+  10, }, }); export default App;'
+- <script src="https://cdn.jsdelivr.net/npm/plantuml-encoder/dist/plantuml-encoder.min.js"></script>
+  <script> document.querySelectorAll('pre.plantuml').forEach(function(block) { var
+  code = block.textContent; var encoded = plantumlEncoder.encode(code); var img =
+  document.createElement('img'); img.src = 'https://www.plantuml.com/plantuml/svg/'
+  + encoded; block.parentNode.replaceChild(img, block); }); </script>
+- Code highlighting will not function is Javascript is disabled. Ronzz.org > a Ghost
+  instance Ronzz.org is a Ghost instance. Ghost is an open-source platform dedicated
+  to HTML-based professional publication.
+- 'We have chosen Ghost over building our own site from scratch to save the headaches
+  and concentrate on what really matters: the CONTENT.--- Styling Ronzz.org uses a
+  derivative of the Dawn theme v.1.0.0, one of the 18 official Ghost themes.'
+- Code display The CS section of Ronzz.org features a considerable amount of code
+  snippets. The code highlighting is done via Prism.js, an open-source, javascript-based
+  code highlighting solution.
+name: code_docs_style

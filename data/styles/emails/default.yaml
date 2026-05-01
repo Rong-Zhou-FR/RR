@@ -1,14 +1,16 @@
-name: "email_style"
-description: "Rong's email writing style"
+name: "emails_style"
+description: "Rong's emails writing style"
 examples:
-  # Add your email style examples here
-  # Example format:
-  # - "Hi team, I wanted to follow up on the project timeline. Can we schedule a quick meeting to discuss the next steps?"
-  # - "Thanks for your help with the bug fix. The solution you provided was exactly what we needed."
-  # - "Please find the attached document with the updated specifications. Let me know if you have any questions."
-  #
-  # Tips for selecting examples:
-  # - Choose examples that show professional yet friendly tone
-  # - Include examples of different email types (requests, updates, thank yous)
-  # - Focus on clarity and conciseness
-  []
+  - "Many cloud providers block port 25 on their cloud servers, which effectively block OpenSMTPD."
+  - "✅ Cost estimation 🆓 Author OpenBSD Project & Gilles Chehade Usage Case Mail Transfer Agent (MTA) for sending/receiving emails Dependency Linux/BSD Server, Domain Name, Static IP Advantages • Lightweight and resource-efficient • Security-focused design (from OpenBSD) • Simple, human-readable configuration • Free and open-source • Built-in SPF, DKIM, and spam filtering support • Modern SMTP standards compliance • Active development and community • Minimal attack surface Platforms supported Linux OpenBSD FreeBSD macOS Windows Availability ✅ ✅ ✅ ✅ ❌ Open-source ✅ ✅ ✅ ✅ N/A Price 🆓 🆓 🆓 🆓 N/A ⚠️ OpenSMTPD is a Unix-based mail server."
+  - "Windows users should run it in WSL2 or a Linux VM, though this is not recommended for production use."
+  - "Case for OpenSMTPD If you send emails from your own domain—whether for personal correspondence, a small business, or web applications—you face the challenge of email delivery."
+  - "Solutions there are plenty: Cloud Email (Gmail, Outlook) Transactional Email APIs (SendGrid, Mailgun) Shared Hosting Email Self-hosted (Postfix) Self-hosted (OpenSMTPD) Min Price 🆓 (limited) 💰 ($0.01/email) 💰 (hosting fee) 🆓 🆓 Open-source ❌ ❌ Varies ✅ ✅ Advantages Easy, reliable, spam filtering Developer-friendly APIs, delivery analytics Included with hosting Full control, mature Simple config, lightweight, secure Disadvantages Privacy concerns, vendor lock-in Costly at scale, limited customization Poor deliverability, limited features Complex configuration, bloated Smaller community than Postfix The Email Delivery Problem The most convenient solution is using cloud email providers like Gmail or Outlook."
+  - "LocalSend CLI for Linux is a simple command-line tool that lets you send and receive files over your local network using the LocalSend protocol. It’s lightweight, open-source, and doesn’t require internet access."
+  - "To install it: git clone https://github.com/0w0mewo/localsend-cli.git cd localsend-cli go build -o localsend Allow Localsend CLI to communicate with port 53317 through firewalls (if any) : # LocalSend sudo ufw allow 53317/tcp sudo ufw allow 53317/udp 🚀 Basic Commands Command Description localsend scan Scan your local network for devices localsend send -f FILE -p IP Send a file to a device at IP address localsend recv Receive incoming files localsend help Show help and available commands You can find the full CLI project and documentation on GitHub ."
+  - "If your devices are in close proximity to each other, you may find sharing over bluetooth easier"
+  - "This article contains AI generated content verified by a human. Free and open-source local file & message transfer app combining the immediacy of peer‑to‑peer tools and the simplicity of a one‑click interface."
+  - "✅ (Apache 2.0) Cost 🆓 Author Tien Do Nam & contributors Use Case Cross‑platform ad‑hoc file & text sharing on LAN Dependency Local network (Wi‑Fi / Ethernet) Advantages Works purely peer‑to‑peer (no central server) Cross‑platform (Windows, macOS, Linux, Android, iOS, Web beta) Free & permissively licensed End‑to‑end encrypted (HTTPS local, ephemeral certs) Very low friction (open → pick target → send) Supports files & plain text snippets Portable mode + CLI Platforms Supported (Indicative) Platform Windows macOS Linux Android iOS Availability ✅ ✅ ✅ ✅ ✅ Open-source ✅ ✅ ✅ ✅ ✅ Price 🆓 🆓 🆓 🆓 🆓 Mobile builds distributed via stores / F-Droid; Web is beta (browser sandbox limits direct FS access)."
+  - "Always verify current packaging status: https://repology.org/project/localsend/versions Case for LocalSend If you have more than one device in the same physical space, you will sooner or later move files between them."
+  - "The simplest “wireless” method many people use is self‑emailing or messaging themselves."
+  - "It works for tiny, infrequent transfers, but it silently creates duplicates (original, sent copy, received copy, saved copy) and scales poorly for large media folders."

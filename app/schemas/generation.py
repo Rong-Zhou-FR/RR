@@ -19,6 +19,9 @@ class GenerationRequest(BaseModel):
         0.7, ge=0.0, le=2.0, description="Generation temperature"
     )
     top_p: float = Field(0.9, ge=0.0, le=1.0, description="Top-p sampling parameter")
+    use_rag: bool = Field(
+        False, description="Use RAG for retrieving relevant style examples"
+    )
 
 
 class GenerationResponse(BaseModel):

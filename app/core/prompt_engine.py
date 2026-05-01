@@ -3,12 +3,17 @@ from app.core.exceptions import GenerationError
 from app.core.style_manager import get_style_examples
 
 
-def build_prompt(scenario: str, user_input: str) -> str:
+def build_prompt(
+    scenario: str,
+    user_input: str,
+    style_examples: list[str] | None = None,
+) -> str:
     """Build prompt with style injection for given scenario.
 
     Args:
         scenario: The scenario name (e.g., "tech_guides")
         user_input: The user's request or input text
+        style_examples: Optional pre-retrieved examples (for RAG). If None, loads all.
 
     Returns:
         Formatted prompt with style examples and instructions
@@ -18,7 +23,8 @@ def build_prompt(scenario: str, user_input: str) -> str:
     """
     try:
         # Get style examples for the scenario
-        style_examples = get_style_examples(scenario)
+        if style_examples is None:
+            style_examples = get_style_examples(scenario)
 
         # Build the prompt with clear structure
         prompt = f"""Write in Rong's style for {scenario.replace('_', ' ')}.
