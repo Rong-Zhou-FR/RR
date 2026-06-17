@@ -1,0 +1,93 @@
+description: Rong's tech_guides writing style
+examples:
+- En temps de crise les gens espèrent d'avoir un héro qui résoudre tous leurs problèmes
+  dans un coup. Trump a convaincu une partie important de la nation américaine qu'il
+  serait l'héro.
+- 'Trump s''est présenté comme un « outsider », différent de personnes de politiques
+  traditionnelles qui les gens voient comme corrompu et inefficace. Trump sait très
+  clairement que c''est pour ça qu''il est élu : Il joue le jeu bien.'
+- Il accuse tous ses opposants comme corrompu voire pédophiles (Pizzagate conspiracy
+  theory). Les électeurs lui croient, car ils sont très frustrés avec les politiques
+  avant Trump et Trump semble leur seul espoir.
+- Mao n'a jamais démontré sa capacité d'être un bon leader de la nation. Ses politiques
+  sont critiqué depuis le début par les économistes voire tous les intellectuels.
+- En effet même avant qu'il est arrivé au pouvoir absolu il a déjà causé plein de
+  chaos.
+- IUT Hubert Curien Impression globale Globalement, l'IUT Hubert Curien est un IUT
+  de taille moyenne (~500 étudiants), solide, avec une directrice sympathique et approchable.
+- Les enseignants sont qualifiés, et les services de soutien (bibliothèque, informatique,
+  reprographie) sont accessibles et corrects.
+- 'Le bâtiment de l''IUT est plutôt bien équipé, avec tout ce qu''il faut : plusieurs
+  fontaines d''eau, plusieurs toilettes avec papier toilette toujours fourni, et une
+  machine à café à 0,40–0,50 € la boisson.'
+- Les salles de classe sont lumineuses grâce aux grandes fenêtres, par lesquelles
+  on voit soit la nature soit la rue, selon la salle.
+- La bibliothèque est petite bien sûr par rapport à des établissements plus importants,
+  mais la disponibilité de livres, surtout pour les sujets enseignés à l'IUT, est
+  vraiment bonne.
+- Installation en cours..." sudo apt install -y "$pkg" fi done echo "🎉 Vérification
+  terminée.
+- 'Common problèmes [WARN] We recommend adding compatibilityDate: ''2025-12-15'' to
+  your nuxt.config file.Using 2025-07-15 as fallback.'
+- 'More info at: https://nitro.build/deploy#compatibility-date Add to nuxt.config.ts
+  : export default defineNuxtConfig({ compatibilityDate: ''2025-12-15'', // ...'
+- your other config }) Nitro uses a compatibility date to lock in behavior for APIs
+  and runtime features. This ensures that even if Nitro evolves, your app won’t break
+  unexpectedly.
+- If you don’t set it, Nitro falls back to an older date, which may miss bug fixes
+  or updated behavior.
+- Copyleft Statement Renoncé du droit d'auteur Much of our content is freely available
+  under the Creative Commons BY-NC-ND 4.0 licence, which allows free distribution
+  and republishing of our content for non-commercial purposes, as long as Ronzz.org
+  is appropriately credited and the content is not being modified materially to express
+  a different meaning than it is originally intended for.
+- 'File permissions in numeric form on Linux Overview Linux file permissions control
+  access for three user classes: owner group others Each class has three permission
+  bits: read (r), write (w), execute (x).'
+- Permission bits and numeric values 0 = --- (no permissions) 1 = --x (execute only)
+  2 = -w- (write only) 3 = -wx (write + execute) 4 = r-- (read only) 5 = r-x (read
+  + execute) 6 = rw- (read + write) 7 = rwx (read + write + execute) Combine three
+  digits to represent owner-group-others (e.g., 754).
+- Common examples 755 7 (owner) = rwx 5 (group) = r-x 5 (others)= r-x Typical for
+  executable programs and public scripts. 644 6 (owner) = rw- 4 (group) = r-- 4 (others)=
+  r-- Typical for text files and configuration files.
+- This article contains AI generated content verified by a human. Background Modern
+  browsers implement the Same Origin Policy to protect users. An origin is defined
+  by the combination of protocol, domain, and port .
+- If any of these differ between a web page and the resource it requests, the request
+  is considered cross‑origin .
+- 'Examples: http://example.com vs https://example.com → different protocol, different
+  origin http://localhost:3000 vs http://localhost:3010 → different port, different
+  origin https://app.example.com vs https://api.example.com → different subdomain,
+  different origin When a frontend application tries to call an API hosted on a different
+  origin, the browser blocks the response unless the server explicitly allows it.'
+- '| v If ALL match → Same Origin → Allowed directly If ANY differ → Cross Origin
+  → Trigger CORS check | v [ Preflight Request (OPTIONS) ] Browser asks server: "Do
+  you allow this origin?" | v Server Response Headers: Access-Control-Allow-Origin:
+  https://app.example.com Access-Control-Allow-Methods: GET, POST, OPTIONS Access-Control-Allow-Headers:
+  Content-Type, Authorization | v If headers match → Browser allows request If headers
+  missing/invalid → Browser blocks request Without it, any website you visit could
+  secretly make requests to other sites where you’re logged in (like your bank, email,
+  or social media) and read the responses.'
+- Ensure you are running bash getent passwd <username> sudo chsh -s /bin/bash <username>
+  1. Customize your Bash prompt The Bash prompt is controlled by the PS1 environment
+  variable.
+- 'Add the following to your ~/.bashrc : # Basic colored prompt with username, hostname,
+  and current directory export PS1="\[\e[32m\]\u@\h\[\e[0m\]:\[\e[34m\]\w\[\e[0m\]\$
+  " The \e[32m sets green color, \u shows username, \h shows hostname, \w shows working
+  directory, and \e[0m resets color.'
+- 'Add these to ~/.bashrc : # Navigation alias ..=''cd ..'' alias ...=''cd ../..''
+  alias ll=''ls -lah'' alias la=''ls -A'' # Safety nets alias rm=''rm -i'' alias cp=''cp
+  -i'' alias mv=''mv -i'' # Git shortcuts alias gs=''git status'' alias ga=''git add''
+  alias gc=''git commit'' alias gp=''git push'' alias gl=''git log --oneline --graph
+  --decorate'' # System alias update=''sudo apt update && sudo apt upgrade -y'' alias
+  ports=''netstat -tulanp'' 3.'
+- 'Enable better command history Add these lines to ~/.bashrc for improved history
+  management: # Don''t save duplicate commands export HISTCONTROL=ignoredups:erasedups
+  # Larger history export HISTSIZE=10000 export HISTFILESIZE=20000 # Append to history
+  file, don''t overwrite shopt -s histappend # Save multi-line commands as one entry
+  shopt -s cmdhist 4.'
+- To deploy Prisma, you should create a second database in your Prisma project. mv
+  .env .env.dev Then create a env.production file similar to your env file, with the
+  production database url.
+name: tech_guides_style
